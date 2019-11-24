@@ -26,7 +26,7 @@ def log_values(tags, fields):
     # export INFLUX_USERNAME=r...
     # export INFLUX_PASSWORD=t...
     # influx
-    # > CREATE DATABASE microscope
+    # > CREATE DATABASE microscope WITH DURATION 90d
     # > SHOW DATABASES
     # > USE microscope
     # > select * from probeTmp
