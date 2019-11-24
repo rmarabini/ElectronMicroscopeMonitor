@@ -1,0 +1,10 @@
+USERNAME='raspberry'
+PASSWORD='temperature'
+MIC='Talos Artica'
+RASPB='carson'
+HOST='scipionbox.cnb.csic.es'
+PORT=8086
+DATABASE='microscope'
+MEASUREMENTTMP='probeTmp'
+MEASUREMENTMAG='probeMag'
+MEASUREMENTVIBRA='probeVibra'

@@ -1,0 +1,813 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cb45bc38-6bdb-4dff-aa22-c8bf41b17dd0" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rpiWebServer/app.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="111" column="65" selection-start-line="111" selection-start-column="54" selection-end-line="111" selection-end-column="65" />
+              <folding>
+                <element signature="e#68#83#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rpiWebServer/templates/lab_temp.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-378">
+              <caret line="34" column="45" selection-start-line="34" selection-end-line="35" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rpiWebServer/templates/lab_env_db.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3570">
+              <caret line="150" column="35" selection-start-line="150" selection-start-column="35" selection-end-line="150" selection-end-column="35" />
+              <folding>
+                <element signature="n#style#0;n#a#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#1;n#div#2;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/rpiWebServer/constants.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rpiWebServer/env_log.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+              <folding>
+                <element signature="e#24#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rpiWebServer/del_log.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="585">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
+              <folding>
+                <element signature="e#218#232#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>plotly</find>
+      <find>temperatures</find>
+      <find>DAte</find>
+      <find>Date</find>
+      <find>F</find>
+      <find>Current</find>
+      <find>chart_temps</find>
+      <find>temperat</find>
+      <find>S</find>
+      <find>YYYY-MM-DD HH:mm</find>
+      <find>Scatter(</find>
+      <find>nan</find>
+      <find>range_h_int</find>
+      <find>hours</find>
+      <find>timezone</find>
+      <find>datetime_range</find>
+      <find>TEmpera</find>
+      <find>print</find>
+      <find>Degree</find>
+      <find>datetimepicker2</find>
+      <find>range_select</find>
+      <find>hou</find>
+      <find>seri</find>
+      <find>key</find>
+      <find>time_a</find>
+      <find>get_records</find>
+      <find>temp</find>
+      <find>refre</find>
+      <find>validate_date</find>
+      <find>keys</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Scripts/tempEachSec.py" />
+        <option value="$PROJECT_DIR$/rpiWebServer/helloWord.py" />
+        <option value="$PROJECT_DIR$/rpiWebServer/helloWordTemplate.py" />
+        <option value="$PROJECT_DIR$/rpiWebServer/static/style.css" />
+        <option value="$PROJECT_DIR$/rpiWebServer/templates/index.html" />
+        <option value="$PROJECT_DIR$/rpiWebServer/wsgi.py" />
+        <option value="$PROJECT_DIR$/rpiWebServer/myproject.ini" />
+        <option value="$PROJECT_DIR$/rpiWebServer/templates/no_sensor.html" />
+        <option value="$PROJECT_DIR$/rpiWebServer/static/css/normalize.css" />
+        <option value="$PROJECT_DIR$/rpiWebServer/static/css/skeleton.css" />
+        <option value="$PROJECT_DIR$/rpiWebServer/templates/lab_temp.html" />
+        <option value="$PROJECT_DIR$/Scripts/env_log.py" />
+        <option value="$PROJECT_DIR$/rpiWebServer/env_log.py" />
+        <option value="$PROJECT_DIR$/rpiWebServer/constants.py" />
+        <option value="$PROJECT_DIR$/rpiWebServer/app.py" />
+        <option value="$PROJECT_DIR$/rpiWebServer/templates/lab_env_db.html" />
+        <option value="$PROJECT_DIR$/rpiWebServer/del_log.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/temp_sensor.iml" />
+        <option value="$PROJECT_DIR$/.idea/misc.xml" />
+        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
+        <option value="$PROJECT_DIR$/.idea/modules.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1280" />
+    <option name="y" value="27" />
+    <option name="width" value="1920" />
+    <option name="height" value="1053" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="temp_sensor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="temp_sensor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="temp_sensor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="temp_sensor" type="462c0819:PsiDirectoryNode" />
+              <item name="rpiWebServer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="temp_sensor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="temp_sensor" type="462c0819:PsiDirectoryNode" />
+              <item name="rpiWebServer" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="temp_sensor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="temp_sensor" type="462c0819:PsiDirectoryNode" />
+              <item name="rpiWebServer" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="temp_sensor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="temp_sensor" type="462c0819:PsiDirectoryNode" />
+              <item name="rpiWebServer" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="temp_sensor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="temp_sensor" type="462c0819:PsiDirectoryNode" />
+              <item name="Scripts" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/rpiWebServer" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/rpiWebServer" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/rpiWebServer" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cb45bc38-6bdb-4dff-aa22-c8bf41b17dd0" name="Default Changelist" comment="" />
+      <created>1570127434650</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1570127434650</updated>
+    </task>
+    <task id="LOCAL-00112" summary="first script that read temperature">
+      <created>1570312886956</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1570312886956</updated>
+    </task>
+    <task id="LOCAL-00113" summary="first script that read temperature">
+      <created>1570312928636</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1570312928636</updated>
+    </task>
+    <task id="LOCAL-00114" summary="first script that read temperature">
+      <created>1570357825688</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1570357825688</updated>
+    </task>
+    <task id="LOCAL-00115" summary="first script that read temperature">
+      <created>1570358224897</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1570358224897</updated>
+    </task>
+    <task id="LOCAL-00116" summary="first script that read temperature">
+      <created>1570358662143</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1570358662143</updated>
+    </task>
+    <task id="LOCAL-00117" summary="first script that read temperature">
+      <created>1570358878352</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1570358878352</updated>
+    </task>
+    <task id="LOCAL-00118" summary="first script that read temperature">
+      <created>1570358947692</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1570358947692</updated>
+    </task>
+    <task id="LOCAL-00119" summary="pass whole dictionary instead a list">
+      <created>1570359230546</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1570359230546</updated>
+    </task>
+    <task id="LOCAL-00120" summary="start adding second temperature">
+      <created>1570359388941</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1570359388941</updated>
+    </task>
+    <task id="LOCAL-00121" summary="start adding second temperature">
+      <created>1570359439564</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1570359439564</updated>
+    </task>
+    <task id="LOCAL-00122" summary="start adding second temperature">
+      <created>1570359520846</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1570359520846</updated>
+    </task>
+    <task id="LOCAL-00123" summary="start adding second temperature">
+      <created>1570359842670</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1570359842670</updated>
+    </task>
+    <task id="LOCAL-00124" summary="start adding second temperature">
+      <created>1570360110483</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1570360110483</updated>
+    </task>
+    <task id="LOCAL-00125" summary="set labels using keys">
+      <created>1570360255236</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1570360255236</updated>
+    </task>
+    <task id="LOCAL-00126" summary="shoe key in alert window">
+      <created>1570360366511</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1570360366511</updated>
+    </task>
+    <task id="LOCAL-00127" summary="shoe key in alert window">
+      <created>1570360444332</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1570360444332</updated>
+    </task>
+    <task id="LOCAL-00128" summary="shoe key in alert window">
+      <created>1570360499916</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1570360499916</updated>
+    </task>
+    <task id="LOCAL-00129" summary="shoe key in alert window">
+      <created>1570360583253</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1570360583253</updated>
+    </task>
+    <task id="LOCAL-00130" summary="shoe key in alert window">
+      <created>1570360765057</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1570360765057</updated>
+    </task>
+    <task id="LOCAL-00131" summary="shoe key in alert window">
+      <created>1570360980219</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1570360980219</updated>
+    </task>
+    <task id="LOCAL-00132" summary="shoe key in alert window">
+      <created>1570361048241</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1570361048241</updated>
+    </task>
+    <task id="LOCAL-00133" summary="shoe key in alert window">
+      <created>1570361170393</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1570361170393</updated>
+    </task>
+    <task id="LOCAL-00134" summary="shoe key in alert window">
+      <created>1570361265716</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1570361265716</updated>
+    </task>
+    <task id="LOCAL-00135" summary="shoe key in alert window">
+      <created>1570361355791</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1570361355791</updated>
+    </task>
+    <task id="LOCAL-00136" summary="shoe key in alert window">
+      <created>1570361555978</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1570361555978</updated>
+    </task>
+    <task id="LOCAL-00137" summary="shoe key in alert window">
+      <created>1570361621812</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1570361621812</updated>
+    </task>
+    <task id="LOCAL-00138" summary="shoe key in alert window">
+      <created>1570361675820</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1570361675820</updated>
+    </task>
+    <task id="LOCAL-00139" summary="shoe key in alert window">
+      <created>1570361744823</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
+      <option name="project" value="LOCAL" />
+      <updated>1570361744823</updated>
+    </task>
+    <task id="LOCAL-00140" summary="pass several plots to google">
+      <created>1570371052111</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1570371052111</updated>
+    </task>
+    <task id="LOCAL-00141" summary="pass several plots to google">
+      <created>1570371143210</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
+      <option name="project" value="LOCAL" />
+      <updated>1570371143210</updated>
+    </task>
+    <task id="LOCAL-00142" summary="pass several plots to google">
+      <created>1570371351888</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
+      <option name="project" value="LOCAL" />
+      <updated>1570371351888</updated>
+    </task>
+    <task id="LOCAL-00143" summary="pass several plots to google">
+      <created>1570371448713</created>
+      <option name="number" value="00143" />
+      <option name="presentableId" value="LOCAL-00143" />
+      <option name="project" value="LOCAL" />
+      <updated>1570371448713</updated>
+    </task>
+    <task id="LOCAL-00144" summary="pass several plots to google">
+      <created>1570371528189</created>
+      <option name="number" value="00144" />
+      <option name="presentableId" value="LOCAL-00144" />
+      <option name="project" value="LOCAL" />
+      <updated>1570371528189</updated>
+    </task>
+    <task id="LOCAL-00145" summary="pass several plots to google">
+      <created>1570371582144</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
+      <option name="project" value="LOCAL" />
+      <updated>1570371582144</updated>
+    </task>
+    <task id="LOCAL-00146" summary="pass several plots to google">
+      <created>1570371621578</created>
+      <option name="number" value="00146" />
+      <option name="presentableId" value="LOCAL-00146" />
+      <option name="project" value="LOCAL" />
+      <updated>1570371621578</updated>
+    </task>
+    <task id="LOCAL-00147" summary="pass several plots to google">
+      <created>1570371651217</created>
+      <option name="number" value="00147" />
+      <option name="presentableId" value="LOCAL-00147" />
+      <option name="project" value="LOCAL" />
+      <updated>1570371651217</updated>
+    </task>
+    <task id="LOCAL-00148" summary="pass several plots to google">
+      <created>1570371697360</created>
+      <option name="number" value="00148" />
+      <option name="presentableId" value="LOCAL-00148" />
+      <option name="project" value="LOCAL" />
+      <updated>1570371697360</updated>
+    </task>
+    <task id="LOCAL-00149" summary="pass several plots to google">
+      <created>1570371793468</created>
+      <option name="number" value="00149" />
+      <option name="presentableId" value="LOCAL-00149" />
+      <option name="project" value="LOCAL" />
+      <updated>1570371793468</updated>
+    </task>
+    <task id="LOCAL-00150" summary="pass several plots to google">
+      <created>1570372051820</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
+      <option name="project" value="LOCAL" />
+      <updated>1570372051821</updated>
+    </task>
+    <task id="LOCAL-00151" summary="pass several plots to google">
+      <created>1570372145474</created>
+      <option name="number" value="00151" />
+      <option name="presentableId" value="LOCAL-00151" />
+      <option name="project" value="LOCAL" />
+      <updated>1570372145474</updated>
+    </task>
+    <task id="LOCAL-00152" summary="pass several plots to google">
+      <created>1570372448368</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
+      <option name="project" value="LOCAL" />
+      <updated>1570372448368</updated>
+    </task>
+    <task id="LOCAL-00153" summary="pass several plots to google">
+      <created>1570372540015</created>
+      <option name="number" value="00153" />
+      <option name="presentableId" value="LOCAL-00153" />
+      <option name="project" value="LOCAL" />
+      <updated>1570372540015</updated>
+    </task>
+    <task id="LOCAL-00154" summary="pass several plots to google">
+      <created>1570372620093</created>
+      <option name="number" value="00154" />
+      <option name="presentableId" value="LOCAL-00154" />
+      <option name="project" value="LOCAL" />
+      <updated>1570372620093</updated>
+    </task>
+    <task id="LOCAL-00155" summary="pass several plots to google">
+      <created>1570372795955</created>
+      <option name="number" value="00155" />
+      <option name="presentableId" value="LOCAL-00155" />
+      <option name="project" value="LOCAL" />
+      <updated>1570372795955</updated>
+    </task>
+    <task id="LOCAL-00156" summary="pass several plots to google">
+      <created>1570372861049</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
+      <option name="project" value="LOCAL" />
+      <updated>1570372861049</updated>
+    </task>
+    <task id="LOCAL-00157" summary="pass several plots to google">
+      <created>1570373115079</created>
+      <option name="number" value="00157" />
+      <option name="presentableId" value="LOCAL-00157" />
+      <option name="project" value="LOCAL" />
+      <updated>1570373115079</updated>
+    </task>
+    <task id="LOCAL-00158" summary="pass several plots to google">
+      <created>1570373263565</created>
+      <option name="number" value="00158" />
+      <option name="presentableId" value="LOCAL-00158" />
+      <option name="project" value="LOCAL" />
+      <updated>1570373263565</updated>
+    </task>
+    <task id="LOCAL-00159" summary="pass several plots to google">
+      <created>1570375660129</created>
+      <option name="number" value="00159" />
+      <option name="presentableId" value="LOCAL-00159" />
+      <option name="project" value="LOCAL" />
+      <updated>1570375660129</updated>
+    </task>
+    <task id="LOCAL-00160" summary="delete everythin in data base older than 90 days">
+      <created>1570380184149</created>
+      <option name="number" value="00160" />
+      <option name="presentableId" value="LOCAL-00160" />
+      <option name="project" value="LOCAL" />
+      <updated>1570380184149</updated>
+    </task>
+    <option name="localTasksCounter" value="161" />
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1280" y="27" width="1920" height="1053" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16489926" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" weight="0.3298731" />
+      <window_info anchor="bottom" id="Python Console" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first script that read temperature" />
+    <MESSAGE value="pass whole dictionary instead a list" />
+    <MESSAGE value="start adding second temperature" />
+    <MESSAGE value="set labels using keys" />
+    <MESSAGE value="shoe key in alert window" />
+    <MESSAGE value="pass several plots to google" />
+    <MESSAGE value="delete everythin in data base older than 90 days" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete everythin in data base older than 90 days" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/rpiWebServer/app.py</url>
+          <line>10</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/rpiWebServer/helloWord.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rpiWebServer/static/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rpiWebServer/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rpiWebServer/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rpiWebServer/static/css/skeleton.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="713">
+          <caret line="417" column="29" selection-start-line="417" selection-start-column="29" selection-end-line="417" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rpiWebServer/static/css/normalize.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="713">
+          <caret line="426" column="1" selection-start-line="426" selection-start-column="1" selection-end-line="426" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rpiWebServer/helloWordTemplate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="12" selection-start-line="10" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.6/dist-packages/chart_studio/plotly/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="18" column="11" lean-forward="true" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rpiWebServer/myproject.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="6" column="5" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/tempEachSec.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rpiWebServer/templates/no_sensor.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.6/dist-packages/plotly/graph_objs/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="37027" column="14" selection-start-line="37027" selection-start-column="6" selection-end-line="37027" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.6/dist-packages/arrow/api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.6/dist-packages/arrow/arrow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-234">
+          <caret line="614" column="8" selection-start-line="614" selection-start-column="8" selection-end-line="614" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.6/dist-packages/flask/templating.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="124" column="4" selection-start-line="124" selection-start-column="4" selection-end-line="124" selection-end-column="4" />
+          <folding>
+            <element signature="e#169#198#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rpiWebServer/templates/lab_temp.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-378">
+          <caret line="34" column="45" selection-start-line="34" selection-end-line="35" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rpiWebServer/env_log.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+          <folding>
+            <element signature="e#24#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rpiWebServer/del_log.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="e#218#232#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rpiWebServer/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="111" column="65" selection-start-line="111" selection-start-column="54" selection-end-line="111" selection-end-column="65" />
+          <folding>
+            <element signature="e#68#83#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rpiWebServer/templates/lab_env_db.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3570">
+          <caret line="150" column="35" selection-start-line="150" selection-start-column="35" selection-end-line="150" selection-end-column="35" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#1;n#div#2;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rpiWebServer/constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

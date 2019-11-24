@@ -1,0 +1,2 @@
+sudo dd if=/dev/mmcblk0  of=tempSemsor.img
+sudo dd bs=4M if=tempSemsor.img of=/dev/mmcblk0  

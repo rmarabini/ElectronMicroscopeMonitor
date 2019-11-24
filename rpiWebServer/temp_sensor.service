@@ -1,0 +1,13 @@
+[Unit]
+Description="uWSGI server instance for temp_semsor"
+After=network.target
+
+[Service]
+User=pi
+Group=pi
+WorkingDirectory=/home/pi/temp_sensor/rpiWebServer
+Environment=FLASK_ENV=test
+ExecStart=/usr/local/bin/uwsgi --ini /var/www/html/rpiWebServer/uwsgi.ini
+
+[Install]
+WantedBy=multi-user.target

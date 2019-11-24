@@ -1,0 +1,15 @@
+Use the following commands for logging:
+
+1) To setup the system e.g. so that the y-component is nulled. This prints values to screen at around 1/second
+>> cd ~/ABElectronics_Python_Libraries/ADCPi/
+>> sudo python2.7 Setup_DataLogging_v1_1.py
+
+
+2) For logging to file with the three magnetometer system:
+>> cd ~/ABElectronics_Python_Libraries/ADCPi/
+>> sudo python2.7 ESKDataLogging_v1.py
+
+3) For logging to file with the three magnetometer and temperature sensor:
+>> cd ~/ABElectronics_Python_Libraries/ADCPi/
+>> sudo python2.7 ESKDataLogging_v1_1.py
+
