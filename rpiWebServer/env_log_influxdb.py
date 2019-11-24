@@ -25,9 +25,11 @@ def log_values(tags, fields):
     # alternative:
     # export INFLUX_USERNAME=r...
     # export INFLUX_PASSWORD=t...
+    # influx
     # > CREATE DATABASE microscope
     # > SHOW DATABASES
-
+    # > USE microscope
+    # > select * from probeTmp
     # select database
     # client.switch_database('microscope')
 
