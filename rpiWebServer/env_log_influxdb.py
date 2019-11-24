@@ -34,7 +34,9 @@ def log_values(tags, fields):
 
     # insert data
     try:
-        dataPoint = [{'measurement': MEASUREMENTTMP, 'tags':tags, 'fields':fields}]
+        dataPoint = [{'measurement': MEASUREMENTTMP,
+                      'tags':tags,
+                      'fields':fields}]
         client.write_points(dataPoint)
     except Exception:
         print("Cannot write to InfluxDB, check the service state "
