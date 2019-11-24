@@ -5,11 +5,10 @@
 # crontab command
 #* * * * *  python3 /home/pi/temp_sensor/rpiWebServer/env_log_influxdb.py
 
-
-from constants import dictSensors
 from influxdb import InfluxDBClient
-from sensitive_data import (PASSWORD, USERNAME, MIC, RASPB,
-                            PORT, HOST, DATABASE, MEASUREMENTTMP)
+from sensitive_data import (PASSWORD, USERNAME)
+from constants import (dictSensors, MIC, RASPB,
+                       PORT, HOST, DATABASE, MEASUREMENTTMP)
 
 def log_values(tags, fields):
     # create a new instance of the InfluxDBClient (API docs),
