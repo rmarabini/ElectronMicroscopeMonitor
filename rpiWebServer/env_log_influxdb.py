@@ -57,8 +57,6 @@ for key, sensor in dictSensors.items():
     sensorFile.close()
     tempData = thetest.split("\n")[1].split(" ")[9]
     temperature = float(tempData[2:])/1000.
-    # testing temperature
-    # temperature = random.randint(10,30)
     fields[key] = temperature
 
 tags={"microscope" : MIC,
