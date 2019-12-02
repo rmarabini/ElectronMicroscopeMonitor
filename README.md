@@ -1,4 +1,4 @@
 # ElectronMicroscopeMonitor
 This project will measure temperature, magnetic field and vibration
 
-See Wiki for detils
+See Wiki for details
