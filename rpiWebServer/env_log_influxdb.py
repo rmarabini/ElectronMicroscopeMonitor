@@ -24,7 +24,7 @@ def log_values(tags, fields):
     # create database to store data (this needs to be done only once"
     # export INFLUX_USERNAME=r...
     # export INFLUX_PASSWORD=t...
-    # start influs CLI
+    # start influx CLI
     # influx 
     # > show databases
     # > CREATE DATABASE microscope WITH DURATION 90d
@@ -72,7 +72,7 @@ for key, sensor in dictSensors.items():
     fields[key] = temperature
 
 
-# dictioanry with  indexable values
+# dictionary with  indexable values
 tags={"microscope" : MIC,
       "probeHost"  : RASPB}
 
