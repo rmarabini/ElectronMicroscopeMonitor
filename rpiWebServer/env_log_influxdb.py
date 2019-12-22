@@ -26,6 +26,7 @@ def log_values(tags, fields):
     # export INFLUX_PASSWORD=t...
     # start influs CLI
     # influx 
+    # > show databases
     # > CREATE DATABASE microscope WITH DURATION 90d
     # > SHOW DATABASES
     # > USE microscope
