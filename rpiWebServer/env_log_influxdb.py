@@ -6,7 +6,7 @@
 #* * * * *  python3 /home/pi/temp_sensor/rpiWebServer/env_log_influxdb.py
 
 from constants import (dictSensors, MIC, RASPB, MEASUREMENTTMP)
-from .env_log_base import log_values
+from env_log_base import log_values
 DEBUG=True
 
 
