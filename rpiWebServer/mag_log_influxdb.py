@@ -67,8 +67,9 @@ min = min(num_list)
 max = max(num_list)
 avg = numpy.mean(num_list)
 std = numpy.std(num_list)
+diff = max - min
 
-print(min, max, avg, std)
+print(min, max, avg, std, diff)
 
 """
 # read temperature from mag probes and create a dictionary
