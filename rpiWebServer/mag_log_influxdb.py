@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
-# this file is executed by a crontab and saves the temperatures each
+# this file is executed by a crontab and saves the magnetic field each
 # minute in a the temporal series database fluxdb
 #
+# adquires data during 60 decs and stores, mean. min. max, stvdev
 # crontab command
-#* * * * *  python3 /home/pi/temp_sensor/rpiWebServer/env_log_influxdb.py
+#* * * * *  python3 /home/pi/temp_sensor/rpiWebServer/mag_log_influxdb.py
 
 from constants import (dictSensors, MIC, RASPB, MEASUREMENTTMP)
-from env_log_base import log_values
+from log_base import log_values
 DEBUG=True
 
 
