@@ -9,8 +9,6 @@ dictSensors = {"01": "/sys/bus/w1/devices/28-01144fd138aa/w1_slave",
 # influxdb
 MIC='Talos Artica'
 RASPB='carson'
-HOST='scipionbox.cnb.csic.es'
-PORT=8086
 DATABASE='microscope'
 MEASUREMENTTMP='probeTmp'
 MEASUREMENTMAG='probeMag'

@@ -6,9 +6,11 @@
 #* * * * *  python3 /home/pi/temp_sensor/rpiWebServer/env_log_influxdb.py
 
 from influxdb import InfluxDBClient
-from sensitive_data import (PASSWORD, USERNAME)
+from sensitive_data import (PASSWORD, USERNAME, HOST, PORT)
 from constants import (dictSensors, MIC, RASPB,
-                       PORT, HOST, DATABASE, MEASUREMENTTMP)
+                        DATABASE, MEASUREMENTTMP)
+
+DEBUG=True
 
 def log_values(tags, fields):
     # saves an entry in influxdb storing the information
@@ -24,8 +26,9 @@ def log_values(tags, fields):
     # create database to store data (this needs to be done only once"
     # export INFLUX_USERNAME=r...
     # export INFLUX_PASSWORD=t...
-    # start influs CLI
+    # start influx CLI
     # influx 
+    # > show databases
     # > CREATE DATABASE microscope WITH DURATION 90d
     # > SHOW DATABASES
     # > USE microscope
@@ -39,7 +42,6 @@ def log_values(tags, fields):
                             username=USERNAME,
                             password=PASSWORD,
                             database=DATABASE)
-
 
     # insert data    
     # if time is not provided it will be added by the databse
@@ -61,17 +63,19 @@ def log_values(tags, fields):
 # read temperature from probes and create a dictionary
 fields={}
 for key, sensor in dictSensors.items():
-    sensorFile = open(sensor)
-    thetest = sensorFile.read()
-    sensorFile.close()
-    tempData = thetest.split("\n")[1].split(" ")[9]
-    temperature = float(tempData[2:])/1000.  # convert miliC to c
-    # testing temperature
-    # temperature = random.randint(10,30)
+    if DEBUG:  # testing, do not access to probes
+        import random
+        temperature = random.randint(10,30)
+    else:
+        sensorFile = open(sensor)
+        thetest = sensorFile.read()
+        sensorFile.close()
+        tempData = thetest.split("\n")[1].split(" ")[9]
+        temperature = float(tempData[2:])/1000.  # convert miliC to c
     fields[key] = temperature
 
 
-# dictioanry with  indexable values
+# dictionary with  indexable values
 tags={"microscope" : MIC,
       "probeHost"  : RASPB}
 
