@@ -59,7 +59,7 @@ while True:
     # print ("Channel 4: %02f" % adc.read_voltage(4))
     num_list.append(magField)
     time.sleep(1.0)
-    print(".", end = '')
+    print(".", end = '', flush=True)
     if time.time() > timeout:
         break
 print("")
