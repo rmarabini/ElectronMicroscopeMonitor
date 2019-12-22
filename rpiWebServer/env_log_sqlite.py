@@ -4,6 +4,7 @@
 #
 # crontab command
 #* * * * *  python3 /home/pi/temp_sensor/rpiWebServer/env_log.py
+# sqlite verson, updated
 
 import sqlite3
 from constants import dictSensors, sqliteDbName, tableName
