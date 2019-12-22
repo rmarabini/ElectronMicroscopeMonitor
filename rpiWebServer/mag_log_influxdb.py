@@ -6,7 +6,7 @@
 # crontab command
 #* * * * *  python3 /home/pi/temp_sensor/rpiWebServer/mag_log_influxdb.py
 
-from constants import (dictSensors, MIC, RASPB, MEASUREMENTTMP)
+from constants import (dictSensors, MIC, RASPB, MEASUREMENTMAG)
 from log_base import log_values
 DEBUG=True
 
@@ -70,27 +70,16 @@ std = numpy.std(num_list)
 diff = max - min
 
 print(min, max, avg, std, diff)
-
-"""
-# read temperature from mag probes and create a dictionary
 fields={}
-for key, sensor in dictSensors.items():
-    if DEBUG:  # testing, do not access to probes
-        import random
-        temperature = random.randint(10,30)
-    else:
-        sensorFile = open(sensor)
-        thetest = sensorFile.read()
-        sensorFile.close()
-        tempData = thetest.split("\n")[1].split(" ")[9]
-        temperature = float(tempData[2:])/1000.  # convert miliC to c
-    fields[key] = temperature
-
+fields['min'] = min
+fields['max'] = max
+fields['std'] = std
+fields['diff'] = diff
 
 # dictionary with  indexable values
 tags={"microscope" : MIC,
       "probeHost"  : RASPB}
 
 # store data in database
-log_values(tags, fields, MEASUREMENTTMP)
-"""
+log_values(tags, fields, MEASUREMENTMAG)
+
