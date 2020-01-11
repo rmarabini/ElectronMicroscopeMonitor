@@ -5,7 +5,6 @@ dictLabels = {"01": "Cryo ARM 300",
 
 dictSensors = {"01": "/sys/bus/w1/devices/28-01144fd138aa/w1_slave",
                "02": "/sys/bus/w1/devices/28-0114509470aa/w1_slave"}
-
 # influxdb
 MIC='Talos Artica'
 RASPB='carson'
