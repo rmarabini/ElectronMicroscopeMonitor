@@ -7,7 +7,7 @@
 
 from constants import (dictSensors, MIC, RASPB, MEASUREMENTTMP)
 from log_base import log_values
-DEBUG=True
+DEBUG=False
 
 
 # read temperature from probes and create a dictionary
