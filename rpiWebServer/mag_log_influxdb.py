@@ -8,7 +8,7 @@
 
 from constants import (dictSensors, MIC, RASPB, MEASUREMENTMAG)
 from log_base import log_values
-DEBUG=True
+DEBUG=False
 
 try:
     from bayeosraspberrypi.mcp3424 import MCP3424
@@ -17,6 +17,7 @@ except:
     print("bayeosraspberrypi package is needed")
 import time
 import numpy
+import math
 
 """
 The MCP3424 is a four channel low-noise, high accuracy delta-sigma 
@@ -44,37 +45,34 @@ footprint are major considerations.
 i2c_instance = I2C()
 bus = i2c_instance.get_smbus()
 
-adc = MCP3424(bus, address=0x68, rate=18)
+adc = MCP3424(bus, address=0x6E, rate=18)
 
 timeout = time.time() + 60*1   # 1 minute loop
 
 num_list = []
-
+magFieldX = 0.
+magFieldY = 0.
+magFieldZ = 0.
 while True:
-    # read from adc channels and print to screen
     # 1 V -> 50,000 nT
-    magField = adc.read_voltage(1) * 50000
-    # print ("Channel 2: %02f\n" % adc.read_voltage(2))
-    # print ("Channel 3: %02f" % adc.read_voltage(3))
-    # print ("Channel 4: %02f" % adc.read_voltage(4))
+    magFieldX = adc.read_voltage(1) * 50000
+    # magFieldY = adc.read_voltage(2) * 50000
+    # magFieldZ = adc.read_voltage(3) * 50000
+    magField = math.sqrt(magFieldX*magFieldX +
+                         magFieldY*magFieldY +
+                         magFieldZ*magFieldZ)
     num_list.append(magField)
-    time.sleep(1.0)
-    print(".", end = '', flush=True)
+
     if time.time() > timeout:
         break
-print("")
-min = min(num_list)
-max = max(num_list)
-avg = numpy.mean(num_list)
-std = numpy.std(num_list)
-diff = max - min
+    time.sleep(1.0)
 
-print(min, max, avg, std, diff)
 fields={}
-fields['min'] = min
-fields['max'] = max
-fields['std'] = std
-fields['diff'] = diff
+fields['min']  = min(num_list)
+fields['max']  = max(num_list)
+fields['avg']  = numpy.mean(num_list)
+fields['std']  = numpy.std(num_list)
+fields['diff'] = fields['max'] - fields['min']
 
 # dictionary with  indexable values
 tags={"microscope" : MIC,
@@ -82,4 +80,3 @@ tags={"microscope" : MIC,
 
 # store data in database
 log_values(tags, fields, MEASUREMENTMAG)
-
