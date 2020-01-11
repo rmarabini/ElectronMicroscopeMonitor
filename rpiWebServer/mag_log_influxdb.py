@@ -45,7 +45,7 @@ footprint are major considerations.
 i2c_instance = I2C()
 bus = i2c_instance.get_smbus()
 
-adc = MCP3424(bus, address=0x68, rate=18)
+adc = MCP3424(bus, address=0x6E, rate=18)
 
 timeout = time.time() + 60*1   # 1 minute loop
 

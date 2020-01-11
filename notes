@@ -5,3 +5,13 @@ PILI
 carson
 192.168.1.54
 B8-27-EB-7C-67-90
+
+Reset password grafana
+
+cd /usr/share/gafana
+sudo grafana-cli --debug  --config /etc/grafana/grafana.ini  admin  reset-admin-password admin
+
+CASA
+carso
+192.168.1.251
+pasword grafana adminadmin
