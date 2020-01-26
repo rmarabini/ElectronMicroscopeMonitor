@@ -30,7 +30,7 @@ def log_values(tags, fields, measurament=MEASUREMENTTMP):
     # > SHOW DATABASES
     # > USE microscope
     # > select * from probeTmp
-  
+    # > delete from probeTmp  
     # create a new instance of the InfluxDBClient (API docs),
     # with information about the server that we want to access
     # sensitive information is in sensitive_data file

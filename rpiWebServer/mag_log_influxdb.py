@@ -47,7 +47,9 @@ bus = i2c_instance.get_smbus()
 
 adc = MCP3424(bus, address=0x6E, rate=18)
 
-timeout = time.time() + 60*1   # 1 minute loop
+timeout = time.time() + 55*1   # 1 minute loop I do not set this to 60
+                               # because They should not be 2 scripts
+                               # running at the same time
 
 num_list = []
 magFieldX = 0.
@@ -55,9 +57,9 @@ magFieldY = 0.
 magFieldZ = 0.
 while True:
     # 1 V -> 50,000 nT
-    magFieldX = adc.read_voltage(1) * 50000
-    # magFieldY = adc.read_voltage(2) * 50000
-    # magFieldZ = adc.read_voltage(3) * 50000
+    magFieldX = adc.read_voltage(2) * 50000
+    magFieldY = adc.read_voltage(3) * 50000
+    magFieldZ = adc.read_voltage(4) * 50000
     magField = math.sqrt(magFieldX*magFieldX +
                          magFieldY*magFieldY +
                          magFieldZ*magFieldZ)
