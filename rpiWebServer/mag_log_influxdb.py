@@ -18,6 +18,17 @@ except:
 import time
 import numpy
 import math
+import signal, os
+
+def handler(signum, frame):
+    print('Magnetic sensor script did not finish in 55 minutes!!!', signum)
+    raise IOError("Aborting mag_log_inplux script")
+    
+# Set the signal handler and a 5-second alarm
+TIMEOUT = 50
+signal.signal(signal.SIGALRM, handler)
+signal.alarm(TIMEOUT + 5)
+
 
 """
 The MCP3424 is a four channel low-noise, high accuracy delta-sigma 
@@ -47,15 +58,19 @@ bus = i2c_instance.get_smbus()
 
 adc = MCP3424(bus, address=0x6E, rate=18)
 
-timeout = time.time() + 55*1   # 1 minute loop I do not set this to 60
-                               # because They should not be 2 scripts
-                               # running at the same time
+timeout = time.time() + TIMEOUT   # 1 minute loop I do not set this to 60
+                                  # because They should not be 2 scripts
+                                  # running at the same time
+				  # if script did not finish in TIMEOUT +5 sec
+				  # abort
 
 num_list = []
 magFieldX = 0.
 magFieldY = 0.
 magFieldZ = 0.
+# counter=0
 while True:
+    # print("counter = %d"% counter); counter += 1
     # 1 V -> 50,000 nT
     magFieldX = adc.read_voltage(2) * 50000
     magFieldY = adc.read_voltage(3) * 50000
@@ -68,6 +83,7 @@ while True:
     if time.time() > timeout:
         break
     time.sleep(1.0)
+    # print("end")
 
 fields={}
 fields['min']  = min(num_list)
@@ -82,3 +98,4 @@ tags={"microscope" : MIC,
 
 # store data in database
 log_values(tags, fields, MEASUREMENTMAG)
+signal.alarm(0) # cancel alarm
