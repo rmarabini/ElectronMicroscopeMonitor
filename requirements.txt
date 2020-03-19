@@ -15,13 +15,13 @@ idna==2.6
 influx-client==1.9.0
 influxdb==5.2.3
 itsdangerous==0.24
-Jinja2==2.10
+#Jinja2==2.10
 keyring==17.1.1
 keyrings.alt==3.1.1
 MarkupSafe==1.1.0
 numpy==1.16.2
 olefile==0.46
-Pillow==5.4.1
+#Pillow==5.4.1
 plotly==4.1.1
 pycrypto==2.6.1
 #PyGObject==3.30.4
@@ -31,11 +31,11 @@ python-apt==1.8.4
 python-dateutil==2.8.0
 pytool==3.15.0
 pytz==2019.3
-pyxdg==0.25
+#pyxdg==0.25
 requests==2.21.0
 retrying==1.3.3
 RPi.GPIO==0.7.0
-i#you better install this with apt install python3-scipy
+#you better install this with apt install python3-scipy
 scipy==1.1.0
 SecretStorage==2.3.1
 simplejson==3.16.0
@@ -43,7 +43,7 @@ six==1.12.0
 smbus==1.1.post2
 ssh-import-id==5.7
 #ufw==0.36
-urllib3==1.24.1
+#urllib3==1.24.1
 uWSGI==2.0.18
 #Werkzeug==0.14.1
 
