@@ -7,28 +7,22 @@ dictLabels = {"01": "Cryo ARM 300",
 #dictSensors = {"01": "/sys/bus/w1/devices/28-01144fd138aa/w1_slave",
 #               "02": "/sys/bus/w1/devices/28-0114509470aa/w1_slave",
 #               "03": "/sys/bus/w1/devices/28-01144fcdf4aa/w1_slave"}
-#carson2?
-dictSensors = {"01": "/sys/bus/w1/devices/28-01145066adaa/w1_slave",
-               "02": "/sys/bus/w1/devices/28-0114508701aa/w1_slave",
-               "03": "/sys/bus/w1/devices/28-01145077a7aa/w1_slave"
+#carson4
+dictSensors = {"01": "/sys/bus/w1/devices/28-01145077a7aa/w1_slave",
+#               "02": "/sys/bus/w1/devices/28-0114508701aa/w1_slave",
+#               "03": "/sys/bus/w1/devices/28-01145077a7aa/w1_slave"
 }
 
 
 # influxdb
-MIC='JEOL'
-RASPB='carson2'
+MIC='cryoArm'
+RASPB='carson4'
 DATABASE='microscope'
 MEASUREMENTTMP='probeTmp'
 MEASUREMENTMAG='probeMag'
 MEASUREMENTVIBRA='probeVibra'
 
 # database name
-sqliteDbName = '/home/pi/temp_sensor/Database/temp.db'
-tableName = "temp"
+#sqliteDbName = '/home/pi/temp_sensor/Database/temp.db'
+#tableName = "temp"
 
-# database schema
-# CREATE TABLE {tableName}(
-#    time timestamp,
-#    sensorID char(2),
-#    sensorValue float, -- Degree Celsius
-# );
