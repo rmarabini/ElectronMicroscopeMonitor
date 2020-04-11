@@ -8,6 +8,7 @@
 from influxdb import InfluxDBClient
 from sensitive_data import (PASSWORD, USERNAME, HOST, PORT)
 from constants import (DATABASE, MEASUREMENTTMP)
+import datetime
 
 def log_values(tags, fields, measurament=MEASUREMENTTMP):
     # saves an entry in influxdb storing the information
@@ -48,7 +49,8 @@ def log_values(tags, fields, measurament=MEASUREMENTTMP):
                       'fields':fields}]
         client.write_points(dataPoint)
     except Exception:
-        print("Cannot write to InfluxDB, check the service state "
+        currentDT = datetime.datetime.now()
+        print(str(currentDT), "Cannot write to InfluxDB, check the service state "
                 "on %s." % HOST)
         return
       

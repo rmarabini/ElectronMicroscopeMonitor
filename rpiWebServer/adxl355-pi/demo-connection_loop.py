@@ -10,9 +10,13 @@ import adxl355
 ################################################################################
 spi = spidev.SpiDev()
 bus = 0
-device = 0
+#device = 0
+device = 1
+
 spi.open(bus, device)
-spi.max_speed_hz = 5000000
+spi.max_speed_hz = 488000 # 5000000
+#spi.max_speed_hz = 7629
+
 spi.mode = 0b00 #ADXL 355 has mode SPOL=0 SPHA=0, its bit code is 0b00
 
 ################################################################################
@@ -20,14 +24,19 @@ spi.mode = 0b00 #ADXL 355 has mode SPOL=0 SPHA=0, its bit code is 0b00
 ################################################################################
 acc = adxl355.ADXL355(spi.xfer2)
 acc.start()
+time.sleep(1)
 
 # Print some info
 acc.dumpinfo()
 time.sleep(1)
 
 while True:
-  #print("Temperature ADC value: {:d}".format(acc.temperatureRaw()))
-  print("Temperature in Celsius: {:.2f}".format(acc.temperature()))
-  print("Ac--: ", np.linalg.norm(acc.get3V()))
-  time.sleep(1)
+    if acc.fifooverrange():
+        print("The FIFO overrange bit was set. That means some data was lost.")
+        print("Consider slower sampling. Or faster host computer.")
+    if acc.hasnewdata():
+        print("Temperature in Celsius: {:.2f}".format(acc.temperature()))
+        print("Ac--: ", np.linalg.norm(acc.get3V()))
+        print("Ac--: ", acc.get3V())
+    time.sleep(1)
 

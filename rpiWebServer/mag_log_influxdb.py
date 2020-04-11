@@ -19,6 +19,7 @@ import time
 import numpy
 import math
 import signal, os
+import datetime
 
 def handler(signum, frame):
     print('Magnetic sensor script did not finish in 55 minutes!!!', signum)
@@ -56,7 +57,12 @@ footprint are major considerations.
 i2c_instance = I2C()
 bus = i2c_instance.get_smbus()
 
-adc = MCP3424(bus, address=0x6E, rate=18)
+try:
+    adc = MCP3424(bus, address=0x6E, rate=18)
+except:
+    currentDT = datetime.datetime.now()
+    print(str(currentDT), "Can not connect to magnetic sensor")
+    exit(0)
 
 timeout = time.time() + TIMEOUT   # 1 minute loop I do not set this to 60
                                   # because They should not be 2 scripts

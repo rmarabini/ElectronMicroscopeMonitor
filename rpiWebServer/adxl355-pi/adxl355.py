@@ -218,7 +218,6 @@ class ADXL355():
     
 
     def get3V(self):
-        print("self.factor", self.factor)
         return [self.getX(), self.getY(), self.getZ()]
 
     def get3Vfifo(self):

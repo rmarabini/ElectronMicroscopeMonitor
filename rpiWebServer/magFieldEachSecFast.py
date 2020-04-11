@@ -45,11 +45,21 @@ footprint are major considerations.
 i2c_instance = I2C()
 bus = i2c_instance.get_smbus()
 
-adc = MCP3424(bus, address=0x6E, rate=18)
+"""
+LSB resolution (mV) 	resolution (nT) 	DataRate (SPS) 	rate
+1                         50                      240            12
+0.25                      12.3                     60            14
+0.0625                     3.1                     15            16
+0.0156                     1.56                     3.75         18
+"""
+rate = 16
+adc = MCP3424(bus, address=0x6E, rate=rate)
+adc.set_conversion_mode(1) #  1 = Continuous conversion mode
 
-timeout = time.time() + 60*1   # 1 minute loop
+timeout = time.time() + 1*15    # 2 sec loop
+#timeout = time.time() + 60*1   # 1 minute loop
 
-num_list = []
+num_list2 = []
 
 while True:
     # read from adc channels and print to screen
@@ -61,21 +71,45 @@ while True:
 #    print ("Channel 3: %02f" % adc.read_voltage(3))
 #    print ("Channel 4: %02f\n" % adc.read_voltage(4))
     magFieldX = adc.read_voltage(2) * 50000
-    magFieldY = adc.read_voltage(3) * 50000
-    magFieldZ = adc.read_voltage(4) * 50000
-    magField = math.sqrt(magFieldX*magFieldX +
-                         magFieldY*magFieldY +
-                         magFieldZ*magFieldZ)
-
-    num_list.append(magField)
-    time.sleep(1.0)
-    print("magField=%f"% magField)
+##    magFieldY = adc.read_voltage(3) * 50000
+##    magFieldZ = adc.read_voltage(4) * 50000
+##    magField = math.sqrt(magFieldX*magFieldX +
+##                         magFieldY*magFieldY +
+##                         magFieldZ*magFieldZ)
+##
+    magField = magFieldX
+    num_list2.append(magField)
+##    time.sleep(1.0)
+##    print("magField=%f"% magField)
     if time.time() > timeout:
         break
-print("")
+
+factor = 1.0
+if rate == 12:
+    factor = 50.
+elif rate == 14:
+    factor = 12.3
+elif rate == 16:
+    factor = 3.1
+elif rate == 18:
+    factor = 1.56
+factor = 1.0
+
+num_list = num_list2
+##num_list = [ ((i//factor) * factor) for i in num_list2]
+	
+##for number in num_list: 
+##    print("%0.2f  "% number, end='')
+
 min = min(num_list)
 max = max(num_list)
 avg = numpy.mean(num_list)
 std = numpy.std(num_list)
+print("len =", len(num_list)) 
+
 
 print(min, max, avg, std)
+import matplotlib.pyplot as plt
+plt.plot(num_list)
+plt.ylabel('some numbers')
+plt.show()

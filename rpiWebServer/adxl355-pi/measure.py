@@ -23,7 +23,8 @@ rate = 125 # do not go over 250, since pi does not handle higher speeds
 ################################################################################
 spi = spidev.SpiDev()
 bus = 0
-device = 0
+#device = 0
+device = 1
 spi.open(bus, device)
 spi.max_speed_hz = 5000000
 spi.mode = 0b00 #ADXL 355 has mode SPOL=0 SPHA=0, its bit code is 0b00
@@ -91,6 +92,11 @@ freqs = np.fft.rfftfreq(len(alldatanp)) * rate
 
 #fft_fshift = np.fft.fftshift(f)
 magnitude_spectrum = np.log( 1. + np.abs(f))
+
+
+# sudo apt-get install libopenjp2-7
+# sudo apt-get install python3-tk
+# sudo pip3 install matplotlib
 
 import matplotlib.pyplot as plt
 fig, ax = plt.subplots()
