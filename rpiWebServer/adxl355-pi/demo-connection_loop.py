@@ -10,8 +10,8 @@ import adxl355
 ################################################################################
 spi = spidev.SpiDev()
 bus = 0
-#device = 0
-device = 1
+device = 0  # pin 24 -> CE=
+#device = 1 # pin 26 -> CE1
 
 spi.open(bus, device)
 spi.max_speed_hz = 488000 # 5000000

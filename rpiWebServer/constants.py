@@ -16,7 +16,7 @@ dictSensors = {"01": "/sys/bus/w1/devices/28-01145077a7aa/w1_slave",
 
 # influxdb
 MIC='cryoArm'
-RASPB='carson4'
+RASPB='carson3'
 DATABASE='microscope'
 MEASUREMENTTMP='probeTmp'
 MEASUREMENTMAG='probeMag'

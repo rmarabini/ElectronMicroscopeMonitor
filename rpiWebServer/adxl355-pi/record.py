@@ -11,11 +11,11 @@ import adxl355
 # Filename for output
 outfilename = 'output.csv'
 # Measurement time in seconds
-mtime = 100
+mtime = 10
 # Data rate, only some values are possible. All others will crash
 # possible: 4000, 2000, 1000, 500, 250, 125, 62.5, 31.25, 15.625, 7.813, 3.906 
 #rate = 62.5
-rate = 3.906
+rate = 500
 
 ################################################################################
 # Initialize the SPI interface                                                 #
@@ -74,4 +74,12 @@ for i in range(len(gdatalist)):
 alldatanp = np.array(alldata)
 np.savetxt(outfilename, alldatanp, delimiter=",")
 
+alldata = []
+for i in range(len(gdatalist)):
+    x = gdatalist[i][0]
+    alldata.append(x)
 
+import matplotlib.pyplot as plt
+plt.plot(alldata)
+plt.ylabel('some numbers')
+plt.show()
