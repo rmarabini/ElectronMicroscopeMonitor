@@ -24,7 +24,10 @@ spi.mode = 0b00
 acc = adxl355.ADXL355(spi.xfer2)
 
 acc.start()
+
+time.sleep(1)
 acc.dumpinfo()
+time.sleep(1)
 
 print("Temperature ADC value: {:d}".format(acc.temperatureRaw()))
 print("Temperature in Celsius: {:.2f}".format(acc.temperature()))
@@ -34,9 +37,15 @@ print("Compare different measurement ranges")
 acc.setrange(adxl355.SET_RANGE_2G)
 while(not acc.hasnewdata()):
     continue
+val = acc.getXRaw()
+print("2g-x raw value: {:d}".format(val))
+print("2g-x value in g: {:f}".format(val * acc.factor))
+val = acc.getYRaw()
+print("2g-y raw value: {:d}".format(val))
+print("2g-y value in g: {:f}".format(val * acc.factor))
 val = acc.getZRaw()
-print("2g raw value: {:d}".format(val))
-print("2g value in g: {:f}".format(val * acc.factor))
+print("2g-z raw value: {:d}".format(val))
+print("2g-z value in g: {:f}".format(val * acc.factor))
 
 acc.setrange(adxl355.SET_RANGE_4G)
 while(not acc.hasnewdata()):
