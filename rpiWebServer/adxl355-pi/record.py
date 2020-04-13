@@ -15,7 +15,7 @@ mtime = 10
 # Data rate, only some values are possible. All others will crash
 # possible: 4000, 2000, 1000, 500, 250, 125, 62.5, 31.25, 15.625, 7.813, 3.906 
 #rate = 62.5
-rate = 500
+rate = 1000
 
 ################################################################################
 # Initialize the SPI interface                                                 #
@@ -81,5 +81,5 @@ for i in range(len(gdatalist)):
 
 import matplotlib.pyplot as plt
 plt.plot(alldata)
-plt.ylabel('some numbers')
+plt.ylabel('aceleration (g)')
 plt.show()
