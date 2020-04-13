@@ -11,11 +11,11 @@ import adxl355
 # Filename for output
 outfilename = 'output.csv'
 # Measurement time in seconds
-mtime = 10
+mtime = 1  # sec
 # Data rate, only some values are possible. All others will crash
 # possible: 4000, 2000, 1000, 500, 250, 125, 62.5, 31.25, 15.625, 7.813, 3.906 
 #rate = 250 # do not go over 250, since pi does not handle higher speeds
-rate = 125 # do not go over 250, since pi does not handle higher speeds
+rate = 250 # do not go over 250, since pi does not handle higher speeds
 #rate = 3.906
 
 ################################################################################
@@ -23,8 +23,8 @@ rate = 125 # do not go over 250, since pi does not handle higher speeds
 ################################################################################
 spi = spidev.SpiDev()
 bus = 0
-#device = 0
-device = 1
+device = 0
+#device = 1
 spi.open(bus, device)
 spi.max_speed_hz = 5000000
 spi.mode = 0b00 #ADXL 355 has mode SPOL=0 SPHA=0, its bit code is 0b00
@@ -36,7 +36,7 @@ acc = adxl355.ADXL355(spi.xfer2)
 acc.start()
 time.sleep(1)
 acc.setrange(adxl355.SET_RANGE_2G) # set range to 2g
-acc.setfilter(lpf = adxl355.ODR_TO_BIT[rate]) # set data rate
+acc.setfilter(hpf=0b00, lpf = adxl355.ODR_TO_BIT[rate]) # set data rate
 
 #ODR_TO_BIT = {4000: SET_ODR_4000,
 #              2000: SET_ODR_2000,
@@ -62,17 +62,25 @@ msamples = mtime * rate
 mperiod = 1.0 / rate
 
 datalist = []
+#my_list = np.zeros(100)
 acc.emptyfifo()
 
 start_time=time.time()
-while (len(datalist) < msamples):
-    if acc.fifooverrange():
-        print("The FIFO overrange bit was set. That means some data was lost.")
-        print("Consider slower sampling. Or faster host computer.")
+counter = 0
+while (counter < msamples):
+    #if acc.fifooverrange():
+    #    print("The FIFO overrange bit was set. That means some data was lost.")
+    #    print("Consider slower sampling. Or faster host computer.")
     if acc.hasnewdata():
         datalist += acc.get3Vfifo()
+        counter += 1
 elapsed_time = time.time() - start_time
 print("elapsed_time", elapsed_time)
+
+#start_time=time.time()
+#datalist = acc.fastgetsamples(msamples)
+#elapsed_time = time.time() - start_time
+#print("elapsed_time", elapsed_time)
 
 # The get3Vfifo only returns raw data. That means three bytes per coordinate,
 # three coordinates per data point. Data needs to be converted first to <int>,
