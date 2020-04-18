@@ -110,9 +110,14 @@ class ADXL355():
     def fifooverrange(self):
         return self.read(REG_STATUS) & 0b100
     
-    def start(self):
+    def start(self, temp=1):
+        "if temperatute set to 0 disable temp  meassure"
         tmp = self.read(REG_POWER_CTL)
-        self.write(REG_POWER_CTL, tmp & 0b0)
+        if temp:
+            self.write(REG_POWER_CTL, tmp & 0b0)
+        else:
+            # Rob Do not read temperature
+            self.write(REG_POWER_CTL, tmp & 0b10)	
 
     def stop(self):
         tmp = self.read(REG_POWER_CTL)
@@ -142,6 +147,9 @@ class ADXL355():
             print("Operating in 4g range")
         if rng & 0b11 == SET_RANGE_8G:
             print("Operating in 8g range")
+
+        rng = self.read(REG_SELF_TEST)
+        print("self_test", bin(rng))
               
     def whoami(self):
         t = self.read(REG_PARTID)

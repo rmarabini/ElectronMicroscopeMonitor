@@ -16,11 +16,12 @@ dictSensors = {"01": "/sys/bus/w1/devices/28-01145077a7aa/w1_slave",
 
 # influxdb
 MIC='cryoArm'
-RASPB='carson3'
+RASPB='carson4'
 DATABASE='microscope'
 MEASUREMENTTMP='probeTmp'
 MEASUREMENTMAG='probeMag'
 MEASUREMENTVIBRA='probeVibra'
+MEASUREMENTVIBRAFFT='probeVibraFFT'
 
 # database name
 #sqliteDbName = '/home/pi/temp_sensor/Database/temp.db'

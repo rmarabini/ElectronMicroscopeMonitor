@@ -10,7 +10,7 @@ from sensitive_data import (PASSWORD, USERNAME, HOST, PORT)
 from constants import (DATABASE, MEASUREMENTTMP)
 import datetime
 
-def delete_meassurement(meassurement)
+def delete_meassurement(meassurement):
     """ Delete all data with meassurement = probe """
     client = InfluxDBClient(host=HOST,
                             port=PORT,
@@ -18,14 +18,59 @@ def delete_meassurement(meassurement)
                             password=PASSWORD,
                             database=DATABASE)
     try:
-        client.query('delete from %s', meassurement)
+        client.query('delete from %s' % meassurement)
     except Exception:
         currentDT = datetime.datetime.now()
         print(str(currentDT), "Cannot delete database entry for meassurement = %s (host=%s)" % (meassurement, HOST))
         return
     client.close()
 
+def log_multiple_values(tags, fields, measurament=MEASUREMENTTMP):
+
+    """
+    For menupoints point
+    tags: dictionary with tags
+    fields: list of dictionary with field
+    meassurement: string with meassurement
+    """
+    client = InfluxDBClient(host=HOST,
+                            port=PORT,
+                            username=USERNAME,
+                            password=PASSWORD,
+                            database=DATABASE)
+
+    # insert data    
+    # if time is not provided it will be added by the databse
+    dataPointList = []
+    now = datetime.datetime.today()
+    _now = datetime.datetime.now()
+    for field in fields:
+        dataPoint = {'measurement': measurament,
+	             'time': now + datetime.timedelta(0,counter),
+                     'tags':tags,
+                     'fields':field}
+        dataPointList.append(dataPoint)
+    try:
+        client.query('delete from %s' %  measurament)
+        client.write_points(dataPointList) #, batch_size=50)
+    except Exception as e:
+        currentDT = datetime.datetime.now()
+        print(str(currentDT), "Cannot write to InfluxDB, check the service state "
+                "on %s." % HOST, str(e))
+        return
+      
+    # check data
+    # > select * probeTmp
+    client.close()
+
 def log_values(tags, fields, measurament=MEASUREMENTTMP):
+
+    """
+    For a single point
+    tags: dictionary with tags
+    fields: dictionary with field
+    meassurement: string with meassurement
+    """
     # saves an entry in influxdb storing the information
     # passed in tags and fields
     # InfluxDB lets you specify fields and tags, both being 
