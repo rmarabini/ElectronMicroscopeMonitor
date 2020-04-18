@@ -10,6 +10,21 @@ from sensitive_data import (PASSWORD, USERNAME, HOST, PORT)
 from constants import (DATABASE, MEASUREMENTTMP)
 import datetime
 
+def delete_meassurement(meassurement)
+    """ Delete all data with meassurement = probe """
+    client = InfluxDBClient(host=HOST,
+                            port=PORT,
+                            username=USERNAME,
+                            password=PASSWORD,
+                            database=DATABASE)
+    try:
+        client.query('delete from %s', meassurement)
+    except Exception:
+        currentDT = datetime.datetime.now()
+        print(str(currentDT), "Cannot delete database entry for meassurement = %s (host=%s)" % (meassurement, HOST))
+        return
+    client.close()
+
 def log_values(tags, fields, measurament=MEASUREMENTTMP):
     # saves an entry in influxdb storing the information
     # passed in tags and fields

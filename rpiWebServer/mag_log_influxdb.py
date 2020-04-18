@@ -22,7 +22,7 @@ import signal, os
 import datetime
 
 def handler(signum, frame):
-    print('Magnetic sensor script did not finish in 55 minutes!!!', signum)
+    print('Magnetic sensor script did not finish in 55 seconds!!!', signum)
     raise IOError("Aborting mag_log_inplux script")
     
 # Set the signal handler and a 5-second alarm
