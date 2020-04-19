@@ -6,7 +6,8 @@
 # crontab command
 #* * * * *  python3 /home/pi/temp_sensor/rpiWebServer/mag_log_influxdb.py
 
-from constants import (dictSensors, MIC, RASPB, MEASUREMENTMAG)
+from constants import (dictSensors, MEASUREMENTMAG)
+from sensitive_data import (MIC, RASPB)
 from log_base import log_values
 DEBUG=False
 
