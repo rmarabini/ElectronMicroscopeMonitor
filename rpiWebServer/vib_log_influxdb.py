@@ -8,7 +8,7 @@ import adxl355_pi.adxl355 as adxl355
 from log_base import log_values
 from sensitive_data import (MIC, RASPB)
 from log_base import log_values, log_multiple_values
-from constants import (dictSensors, MEASUREMENTVIBRAFFT, MEASUREMENTVIBRA)
+from constants import (MEASUREMENTVIBRAFFT, MEASUREMENTVIBRA)
 
 DEBUG = False
 

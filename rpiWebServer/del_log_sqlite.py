@@ -7,7 +7,7 @@
 #0 1 * * *  python3 /home/pi/temp_sensor/rpiWebServer/del_log.py
 
 import sqlite3
-from constants import dictSensors, sqliteDbName, tableName
+from constants import sqliteDbName, tableName
 
 
 conn = sqlite3.connect(sqliteDbName)  # It is important to provide an

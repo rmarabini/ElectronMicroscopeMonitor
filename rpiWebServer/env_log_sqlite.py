@@ -7,8 +7,8 @@
 # sqlite verson, updated
 
 import sqlite3
-from constants import dictSensors, sqliteDbName, tableName
-
+from constants import sqliteDbName, tableName
+from sensitive_data import dictSensors
 
 def log_values(values):
     conn = sqlite3.connect(sqliteDbName)  # It is important to provide an
