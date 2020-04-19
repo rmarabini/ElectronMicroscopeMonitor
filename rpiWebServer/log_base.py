@@ -44,12 +44,14 @@ def log_multiple_values(tags, fields, measurament=MEASUREMENTTMP):
     dataPointList = []
     now = datetime.datetime.today()
     _now = datetime.datetime.now()
+    counter = 0
     for field in fields:
         dataPoint = {'measurement': measurament,
 	             'time': now + datetime.timedelta(0,counter),
                      'tags':tags,
                      'fields':field}
         dataPointList.append(dataPoint)
+        counter +=1
     try:
         client.query('delete from %s' %  measurament)
         client.write_points(dataPointList) #, batch_size=50)
@@ -57,10 +59,9 @@ def log_multiple_values(tags, fields, measurament=MEASUREMENTTMP):
         currentDT = datetime.datetime.now()
         print(str(currentDT), "Cannot write to InfluxDB, check the service state "
                 "on %s." % HOST, str(e))
+		
         return
-      
-    # check data
-    # > select * probeTmp
+
     client.close()
 
 def log_values(tags, fields, measurament=MEASUREMENTTMP):
