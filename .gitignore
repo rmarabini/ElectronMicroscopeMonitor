@@ -1,3 +1,4 @@
+*.OLD
 # password
 rpiWebServer/sensitive_data.py
 
