@@ -1,4 +1,6 @@
-*.OLD
+*kk
+output.csv
+*.pyOLD
 # password
 rpiWebServer/sensitive_data.py
 
