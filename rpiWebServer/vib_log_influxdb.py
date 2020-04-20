@@ -90,15 +90,16 @@ def getData(mtime, rate, acc):
 # Interrup script after 15 secs
 #################
 
-def handler(signum, frame):
-    print('Accelerometer sensor script did not finish in 15 seconds!!!', signum)
-    raise IOError("Aborting mag_log_influx script")
-
 max_counter = 10    
 # Set the signal handler and a 5-second alarm
-TIMEOUT = max_counter * 2
+TIMEOUT = max_counter * 3
 signal.signal(signal.SIGALRM, handler)
-signal.alarm(TIMEOUT + 5)
+signal.alarm(TIMEOUT)
+
+def handler(signum, frame):
+    print('Accelerometer sensor script did not finish in %d seconds!!!' % TIMEOUT, signum)
+    raise IOError("Aborting mag_log_influx script")
+
   
     
 ################################################################################
