@@ -92,7 +92,7 @@ mtime = 1  # sec
 # Data rate, only some values are possible. All others will crash
 # possible: 4000, 2000, 1000, 500, 250, 125, 62.5, 31.25, 15.625, 7.813, 3.906 
 #rate = 250 # do not go over 250, since pi does not handle higher speeds
-rate = 62.5 # do not go over 250, since pi does not handle higher speeds
+rate = 125 # do not go over 250, since pi does not handle higher speeds
 goodValue = {31.25: 0.1,
              62.5:  0.1,
              125:   0.07, 
@@ -128,7 +128,7 @@ while counter < 1:
     ################################################################################
     
     magnitude_spectrum, alldatanp = getData(mtime, rate, acc)
-    print(time.time(), counter, magnitude_spectrum[0])
+    print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(1347517370)), counter, magnitude_spectrum[0], alldatanp[0])
     if DEBUG:
         print(alldatanp)
         print(magnitude_spectrum[0], goodValue[rate], counter)
