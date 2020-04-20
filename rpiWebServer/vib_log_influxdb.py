@@ -31,6 +31,15 @@ def getData(mtime, rate, acc):
     # loop to retrieve meassurement, we must use len(datalist) instead a counter
     # beacuse a single call to the adxl Rwill retreave all the meassurement stored 
     # in the buffer
+    
+    # read a few values since first measurements many times are wrong
+    counter =0
+    while (counter < 10):
+          if acc.hasnewdata():
+              acc.get3Vfifo()
+              counter = counter + 1  
+	  
+    # read 10 samples and ignore them
     while(len(datalist) < msamples):
         # complain if the adxl buffer is full and therefore some data is lost
         if DEBUG:
@@ -57,7 +66,7 @@ def getData(mtime, rate, acc):
     
     # copy second element into first one since the first
     # meassurement is always undervalued
-    gdatalist[0] = gdatalist[1]
+    # gdatalist[0] = gdatalist[1]
     
     # remove zero valued meassurements
     length = len(gdatalist) 
