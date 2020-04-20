@@ -25,7 +25,7 @@ def delete_meassurement(meassurement):
         return
     client.close()
 
-def log_multiple_values(tags, fields, measurament=MEASUREMENTTMP):
+def log_multiple_values(tags, fields, measurament, microdcope):
 
     """
     For menupoints point
@@ -53,7 +53,7 @@ def log_multiple_values(tags, fields, measurament=MEASUREMENTTMP):
         dataPointList.append(dataPoint)
         counter +=1
     try:
-        client.query('delete from %s' %  measurament)
+        client.query("delete from %s where microscope='%s' " %  (measurament, microscope))
         client.write_points(dataPointList) #, batch_size=50)
     except Exception as e:
         currentDT = datetime.datetime.now()
@@ -92,7 +92,8 @@ def log_values(tags, fields, measurament=MEASUREMENTTMP):
     # > SHOW DATABASES
     # > USE microscope
     # > select * from probeTmp
-    # > delete from probeTmp  
+    # > delete from probeTmp
+    # > DROP SERIES FROM probeTmp WHERE MIC='Talos'
     # create a new instance of the InfluxDBClient (API docs),
     # with information about the server that we want to access
     # sensitive information is in sensitive_data file

@@ -91,6 +91,7 @@ print("elapsed_time", elapsed_time)
 rawdatalist = acc.convertlisttoRaw(datalist)
 # Convert the <int> to <float> in g
 gdatalist = acc.convertRawtog1D(acc.convertlisttoRaw(datalist))
+print(gdatalist)
 
 # copy second element into first one since the first
 # meassurement is always low
@@ -111,6 +112,7 @@ gdatalist[0] = gdatalist[1]
 # Compute Fourier transform
 # convert to np array
 alldatanp = np.array(gdatalist)
+print(alldatanp)
 f = np.fft.rfft(alldatanp, norm="ortho")  # rfftn The n-dimensional FFT of real input.
                                           # norm = ortho -> normalize by 1/sqrt(N)
 f[0] = f[1]  # better visualization 

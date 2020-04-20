@@ -2,7 +2,7 @@ import spidev
 import time
 import numpy as np
 import sys
-import matplotlib.pyplot as plt
+import signal, os
 
 import adxl355_pi.adxl355 as adxl355
 from log_base import log_values
@@ -10,7 +10,7 @@ from sensitive_data import (MIC, RASPB)
 from log_base import log_values, log_multiple_values
 from constants import (MEASUREMENTVIBRAFFT, MEASUREMENTVIBRA)
 
-DEBUG = False
+DEBUG = True
 
 def getData(mtime, rate, acc):
     """ read data fro adxl355 accelerometer
@@ -18,8 +18,6 @@ def getData(mtime, rate, acc):
         rate: number of samples per second
         acc: adxl355 handler
     """
-    acc.start()  # start probe
-    time.sleep(1) # wait 1 sec before accesing probe
     datalist = [] # store measssurement here 
     msamples = mtime * rate  # total number of samples
     mperiod = 1.0 / rate # sampleach each mperiod seconds
@@ -69,9 +67,22 @@ def getData(mtime, rate, acc):
     f[0] = f[1]  # better visualization 
     #fft_fshift = np.fft.fftshift(f)
     magnitude_spectrum = np.log( 1. + np.abs(f))
-    acc.stop()
     return   magnitude_spectrum, alldatanp
     
+  
+##################
+# Interrup script after 15 secs
+#################
+
+def handler(signum, frame):
+    print('Accelerometer sensor script did not finish in 15 seconds!!!', signum)
+    raise IOError("Aborting mag_log_influx script")
+    
+# Set the signal handler and a 5-second alarm
+TIMEOUT = 15
+signal.signal(signal.SIGALRM, handler)
+signal.alarm(TIMEOUT + 5)
+  
     
 ################################################################################
 # Some values for the recording                                                #
@@ -81,7 +92,7 @@ mtime = 1  # sec
 # Data rate, only some values are possible. All others will crash
 # possible: 4000, 2000, 1000, 500, 250, 125, 62.5, 31.25, 15.625, 7.813, 3.906 
 #rate = 250 # do not go over 250, since pi does not handle higher speeds
-rate = 125 # do not go over 250, since pi does not handle higher speeds
+rate = 62.5 # do not go over 250, since pi does not handle higher speeds
 goodValue = {31.25: 0.1,
              62.5:  0.1,
              125:   0.07, 
@@ -89,14 +100,15 @@ goodValue = {31.25: 0.1,
 	     500:   0.035}
 
 counter = 0
-while counter < 5:
+bus = 0
+#device = 0  # CE0
+device = 1  # CE1
+
+while counter < 1:
     ################################################################################
     # Initialize the SPI interface                                                 #
     ################################################################################
     spi = spidev.SpiDev()
-    bus = 0
-    #device = 0  # CE0
-    device = 1  # CE1
     spi.open(bus, device)
     spi.max_speed_hz = 3900000
     spi.mode = 0b00 #ADXL 355 has mode SPOL=0 SPHA=0, its bit code is 0b00
@@ -105,6 +117,8 @@ while counter < 5:
     # Initialize the ADXL355                                                       #
     ################################################################################
     acc = adxl355.ADXL355(spi.xfer2)
+    acc.start()
+    time.sleep(1)
     acc.setrange(adxl355.SET_RANGE_2G) # set range to 2g
     acc.setfilter(hpf=0b00, lpf = adxl355.ODR_TO_BIT[rate]) # set data rate
     	      
@@ -120,7 +134,8 @@ while counter < 5:
         print(magnitude_spectrum[0], goodValue[rate], counter)
     if magnitude_spectrum[0] > goodValue[rate]:
         break
-    time.sleep(1)
+    acc.stop()
+    spi.close()
     counter += 1
 
 if DEBUG:
@@ -128,8 +143,8 @@ if DEBUG:
 
 # Plot fourier transform
 # compute frequencies
-freqs = np.fft.rfftfreq(len(alldatanp)) * rate
 if DEBUG:
+    import matplotlib.pyplot as plt
     fig1, ax1 = plt.subplots()
     ax1.plot(freqs, magnitude_spectrum)
     ax1.set_xlabel('Frequency in Hertz [Hz]')
@@ -148,7 +163,7 @@ for freq, mag in zip(freqs, magnitude_spectrum):
 tags={"microscope" : MIC,
       "probeHost"  : RASPB,
       }
-log_multiple_values(tags, fields, MEASUREMENTVIBRAFFT)
+log_multiple_values(tags, fields, MEASUREMENTVIBRAFFT, MIC)
 
 # log values VIB
 fields={}
