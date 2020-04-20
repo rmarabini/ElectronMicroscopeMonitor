@@ -143,6 +143,7 @@ if DEBUG:
 
 # Plot fourier transform
 # compute frequencies
+freqs = freqs = np.fft.rfftfreq(len(alldatanp)) * rate
 if DEBUG:
     import matplotlib.pyplot as plt
     fig1, ax1 = plt.subplots()
