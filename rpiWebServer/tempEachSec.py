@@ -2,7 +2,7 @@
 the temperature once every second:"""
 
 import time
-from sensitive_data import dictSensors
+from constants import dictSensors
 
 while 1:
     for sensor in dictSensors.values():

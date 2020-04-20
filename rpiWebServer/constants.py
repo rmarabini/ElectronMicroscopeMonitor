@@ -23,7 +23,15 @@ MEASUREMENTMAG='probeMag'
 MEASUREMENTVIBRA='probeVibra'
 MEASUREMENTVIBRAFFT='probeVibraFFT'
 
-# database name
-#sqliteDbName = '/home/pi/temp_sensor/Database/temp.db'
-#tableName = "temp"
+# temperature sensor
+from collections import OrderedDict
+from glob import glob as gloob
+from os.path  import join
+base_dir = "/sys/bus/w1/devices/"
+device_folder = gloob(base_dir + "28*")
+dictSensors = OrderedDict()
+counter = 1
+for sensor in sorted(device_folder):
+    dictSensors["%02d"%counter] = join(base_dir, sensor)
+    counter = counter +1
 
