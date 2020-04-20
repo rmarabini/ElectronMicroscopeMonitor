@@ -32,6 +32,6 @@ device_folder = gloob(base_dir + "28*")
 dictSensors = OrderedDict()
 counter = 1
 for sensor in sorted(device_folder):
-    dictSensors["%02d"%counter] = join(base_dir, sensor)
+    dictSensors["%02d"%counter] = join(base_dir, sensor, 'w1_slave')
     counter = counter +1
 
