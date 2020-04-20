@@ -25,7 +25,7 @@ def delete_meassurement(meassurement):
         return
     client.close()
 
-def log_multiple_values(tags, fields, measurament, microdcope):
+def log_multiple_values(tags, fields, measurament, microscope):
 
     """
     For menupoints point
