@@ -93,9 +93,10 @@ def getData(mtime, rate, acc):
 def handler(signum, frame):
     print('Accelerometer sensor script did not finish in 15 seconds!!!', signum)
     raise IOError("Aborting mag_log_influx script")
-    
+
+max_counter = 10    
 # Set the signal handler and a 5-second alarm
-TIMEOUT = 15
+TIMEOUT = max_counter * 2
 signal.signal(signal.SIGALRM, handler)
 signal.alarm(TIMEOUT + 5)
   
@@ -108,19 +109,19 @@ mtime = 1  # sec
 # Data rate, only some values are possible. All others will crash
 # possible: 4000, 2000, 1000, 500, 250, 125, 62.5, 31.25, 15.625, 7.813, 3.906 
 #rate = 250 # do not go over 250, since pi does not handle higher speeds
-rate = 125 # do not go over 250, since pi does not handle higher speeds
+rate = 250 # do not go over 250, since pi does not handle higher speeds
 goodValue = {31.25: 0.1,
              62.5:  0.1,
-             125:   0.07, 
-             250:   0.05, 
+             125:   0.06, 
+             250:   0.045, 
 	     500:   0.035}
 
 counter = 0
 bus = 0
 #device = 0  # CE0
 device = 1  # CE1
-
-while counter < 1:
+_max = 0
+while counter < max_counter:
     ################################################################################
     # Initialize the SPI interface                                                 #
     ################################################################################
@@ -143,12 +144,19 @@ while counter < 1:
     # Record data                                                                  #
     ################################################################################
     
-    magnitude_spectrum, alldatanp = getData(mtime, rate, acc)
-    print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(1347517370)), counter, magnitude_spectrum[0], alldatanp[0])
+    magnitude_spectrum_tmp, alldatanp_tmp = getData(mtime, rate, acc)
+    print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(1347517370)), 
+          counter, magnitude_spectrum_tmp[0], goodValue[rate], alldatanp_tmp[0])
+	  
+    if magnitude_spectrum_tmp[0] >  _max:
+        _max = magnitude_spectrum_tmp[0]
+        magnitude_spectrum = magnitude_spectrum_tmp
+        alldatanp = alldatanp_tmp
     if DEBUG:
-        print(alldatanp)
-        print(magnitude_spectrum[0], goodValue[rate], counter)
-    if magnitude_spectrum[0] > goodValue[rate]:
+        print(alldatanp_tmp)
+        print(magnitude_spectrum_tmp[0], goodValue[rate], counter)
+    if (magnitude_spectrum_tmp[0] > goodValue[rate]):
+        print("OUT OF LOOP")
         break
     acc.stop()
     spi.close()
