@@ -10,7 +10,7 @@ from sensitive_data import (MIC, RASPB)
 from log_base import log_values, log_multiple_values
 from constants import (MEASUREMENTVIBRAFFT, MEASUREMENTVIBRA)
 
-DEBUG = True
+DEBUG = False
 
 def getData(mtime, rate, acc):
     """ read data fro adxl355 accelerometer
