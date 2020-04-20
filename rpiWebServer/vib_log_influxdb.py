@@ -63,7 +63,6 @@ def getData(mtime, rate, acc):
     length = len(gdatalist) 
     for i in range(length):
         if gdatalist[i] == 0:
-            print("i=", i)
             gdatalist[i] = gdatalist[(i+1)//length]
     
     
