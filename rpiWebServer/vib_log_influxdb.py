@@ -10,7 +10,7 @@ from sensitive_data import (MIC, RASPB)
 from log_base import log_values, log_multiple_values
 from constants import (MEASUREMENTVIBRAFFT, MEASUREMENTVIBRA)
 
-DEBUG = False
+DEBUG = True
 
 def getData(mtime, rate, acc):
     """ read data fro adxl355 accelerometer
@@ -58,6 +58,14 @@ def getData(mtime, rate, acc):
     # copy second element into first one since the first
     # meassurement is always undervalued
     gdatalist[0] = gdatalist[1]
+    
+    # remove zero valued meassurements
+    length = len(gdatalist) 
+    for i in range(length):
+        if gdatalist[i] == 0:
+            print("i=", i)
+            gdatalist[i] = gdatalist[(i+1)//length]
+    
     
     # Compute Fourier transform
     # convert to np array
