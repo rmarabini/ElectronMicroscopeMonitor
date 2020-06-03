@@ -6,8 +6,8 @@
 #* * * * *  python3 /home/pi/temp_sensor/rpiWebServer/env_log_influxdb.py
 
 from influxdb import InfluxDBClient
-from .sensitive_data import (PASSWORD, USERNAME, HOST, PORT)
-from .constants import (DATABASE, MEASUREMENTTMP)
+from sensitive_data import (PASSWORD, USERNAME, HOST, PORT)
+from constants import (DATABASE, MEASUREMENTTMP)
 import datetime
 import base64
 
