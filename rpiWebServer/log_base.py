@@ -6,16 +6,35 @@
 #* * * * *  python3 /home/pi/temp_sensor/rpiWebServer/env_log_influxdb.py
 
 from influxdb import InfluxDBClient
-from sensitive_data import (PASSWORD, USERNAME, HOST, PORT)
-from constants import (DATABASE, MEASUREMENTTMP)
+from .sensitive_data import (PASSWORD, USERNAME, HOST, PORT)
+from .constants import (DATABASE, MEASUREMENTTMP)
 import datetime
+import base64
+
+def enCrypt(message):
+    """Totally naive encryption routine that will not
+    stop a hacker
+    """
+    message_bytes = message.encode('ascii')
+    base64_bytes = base64.b64encode(message_bytes)
+    return base64_bytes.decode('ascii')
+
+
+def deCrypt(base64_message):
+    """
+    Decodes the string created by enCrypt
+    """
+    base64_bytes = base64_message.encode('ascii')
+    message_bytes = base64.b64decode(base64_bytes)
+    message = message_bytes.decode('ascii')
+    return message
 
 def delete_meassurement(meassurement):
     """ Delete all data with meassurement = probe """
     client = InfluxDBClient(host=HOST,
                             port=PORT,
                             username=USERNAME,
-                            password=PASSWORD,
+                            password=deCrypt(PASSWORD),
                             database=DATABASE)
     try:
         client.query('delete from %s' % meassurement)
@@ -100,7 +119,7 @@ def log_values(tags, fields, measurament=MEASUREMENTTMP):
     client = InfluxDBClient(host=HOST,
                             port=PORT,
                             username=USERNAME,
-                            password=PASSWORD,
+                            password=deCrypt(PASSWORD),
                             database=DATABASE)
 
     # insert data    
