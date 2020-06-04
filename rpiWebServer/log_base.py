@@ -33,7 +33,7 @@ def delete_meassurement(meassurement):
     """ Delete all data with meassurement = probe """
     client = InfluxDBClient(host=HOST,
                             port=PORT,
-                            username=USERNAME,
+                            username=deCrypt(USERNAME),
                             password=deCrypt(PASSWORD),
                             database=DATABASE)
     try:
@@ -54,8 +54,8 @@ def log_multiple_values(tags, fields, measurament, microscope):
     """
     client = InfluxDBClient(host=HOST,
                             port=PORT,
-                            username=USERNAME,
-                            password=PASSWORD,
+                            username=deCrypt(USERNAME),
+                            password=deCrypt(PASSWORD),
                             database=DATABASE)
 
     # insert data    
@@ -118,7 +118,7 @@ def log_values(tags, fields, measurament=MEASUREMENTTMP):
     # sensitive information is in sensitive_data file
     client = InfluxDBClient(host=HOST,
                             port=PORT,
-                            username=USERNAME,
+                            username=deCrypt(USERNAME),
                             password=deCrypt(PASSWORD),
                             database=DATABASE)
 
