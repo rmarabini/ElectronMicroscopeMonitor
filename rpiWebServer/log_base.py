@@ -10,6 +10,8 @@ from sensitive_data import (PASSWORD, USERNAME, HOST, PORT)
 from constants import (DATABASE, MEASUREMENTTMP)
 import datetime
 import base64
+import urllib3
+urllib3.disable_warnings()
 
 def enCrypt(message):
     """Totally naive encryption routine that will not
@@ -35,7 +37,9 @@ def delete_meassurement(meassurement):
                             port=PORT,
                             username=deCrypt(USERNAME),
                             password=deCrypt(PASSWORD),
-                            database=DATABASE)
+                            database=DATABASE,
+                            ssl=True,
+                            verify_ssl=False)
     try:
         client.query('delete from %s' % meassurement)
     except Exception:
@@ -56,8 +60,9 @@ def log_multiple_values(tags, fields, measurament, microscope):
                             port=PORT,
                             username=deCrypt(USERNAME),
                             password=deCrypt(PASSWORD),
-                            database=DATABASE)
-
+                            database=DATABASE,
+                            ssl=True,
+                            verify_ssl=False)
     # insert data    
     # if time is not provided it will be added by the databse
     dataPointList = []
@@ -120,7 +125,9 @@ def log_values(tags, fields, measurament=MEASUREMENTTMP):
                             port=PORT,
                             username=deCrypt(USERNAME),
                             password=deCrypt(PASSWORD),
-                            database=DATABASE)
+                            database=DATABASE,
+                            ssl=True,
+                            verify_ssl=False)
 
     # insert data    
     # if time is not provided it will be added by the databse
